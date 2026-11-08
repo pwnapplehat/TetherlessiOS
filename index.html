@@ -114,8 +114,8 @@ h2{font-size:clamp(2.2rem,5.5vw,4.4rem);line-height:.96;letter-spacing:-.045em;f
 /* small trio */
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
 .sm3{border:2px solid var(--hair);border-radius:18px;padding:26px}
-.sm3 .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--mag),var(--cyan));margin-bottom:16px}
-.sm3 .ic svg{width:22px;height:22px;color:#fff}
+.sm3 .ic{margin-bottom:14px;line-height:0}
+.sm3 .ic svg{width:34px;height:34px}
 .sm3 h4{font-size:1.15rem;font-weight:780;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 7px}
 .sm3 p{color:var(--ink-2);font-size:.95rem;margin:0;line-height:1.5}
 
@@ -189,9 +189,10 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
     <div class="blk reveal"><div class="k">Custom cert</div><h3>Over-the-air install</h3><p>Bring your own paid certificate. No pairing, no VPN.</p><span class="big">03</span></div>
   </div>
   <div class="trio">
-    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.7 2.7 0 0 1 0 5.4H2V20a2 2 0 0 0 2 2h3.8v-1.5a2.7 2.7 0 0 1 5.4 0V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg></div><h4>Tweak injection</h4><p>Add .deb / .dylib tweaks while signing.</p></div>
-    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></div><h4>Keep alive</h4><p>Resign before a signature expires.</p></div>
-    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg></div><h4>Built-in Files</h4><p>Manage everything in-app.</p></div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="glyphgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1fe3ff"/><stop offset=".52" stop-color="#7b61ff"/><stop offset="1" stop-color="#ff3d9a"/></linearGradient></defs></svg>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="url(#glyphgrad)"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.7 2.7 0 0 1 0 5.4H2V20a2 2 0 0 0 2 2h3.8v-1.5a2.7 2.7 0 0 1 5.4 0V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5z"/></svg></div><h4>Tweak injection</h4><p>Add .deb / .dylib tweaks while signing.</p></div>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="url(#glyphgrad)"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></div><h4>Keep alive</h4><p>Resign before a signature expires.</p></div>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="url(#glyphgrad)"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/></svg></div><h4>Built-in Files</h4><p>Manage everything in-app.</p></div>
   </div>
 </section>
 

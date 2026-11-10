@@ -68,6 +68,14 @@ a{color:inherit;text-decoration:none}
 .btn.fill:hover{box-shadow:5px 5px 0 color-mix(in oklab,var(--cyan) 60%,transparent)}
 .btn.sm{padding:9px 15px;font-size:.82rem;border-width:2px}
 
+/* github stars */
+.ghstars{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:99px;border:1px solid var(--hair);background:var(--card);color:var(--ink-2);font-size:.84rem;font-weight:700;white-space:nowrap;transition:color .2s,border-color .2s,transform .18s var(--ease)}
+.ghstars:hover{color:var(--ink);border-color:var(--ink);transform:translateY(-1px)}
+.ghstars svg{width:14px;height:14px;flex:none;color:var(--mag)}
+.ghstars b{font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;opacity:0;transition:opacity .3s var(--ease)}
+.ghstars b.in{opacity:1}
+.ghstars b:empty{display:none}
+
 /* hero */
 .hero{padding:clamp(40px,7vw,80px) 0 0;position:relative}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:clamp(24px,4vw,56px);align-items:center}
@@ -198,6 +206,14 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
 .reveal{opacity:0;transform:translateY(28px);transition:all .8s var(--ease)}.reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:36px}.dev{width:min(240px,64vw)}.blocks{grid-template-columns:1fr}.blk.wide{grid-column:span 1}.trio{grid-template-columns:1fr}.builds{grid-template-columns:1fr}.nav a.lnk{display:none}}
+@media (max-width:480px){
+  .nav-in{gap:8px}
+  .brand{gap:7px;font-size:.82rem}
+  .brand img{width:24px;height:24px}
+  .ghstars{padding:6px 10px;gap:5px;font-size:.78rem}
+  .ghstars svg{width:12px;height:12px}
+  .btn.sm{padding:8px 12px;font-size:.78rem}
+}
 @media (max-width:560px){.ways{grid-template-columns:1fr}}
 @media (max-width:520px){.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{justify-content:center}}
 </style>
@@ -206,6 +222,10 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
 <header class="nav" id="nav"><div class="nav-in">
   <a href="#top" class="brand"><img src="assets/icon-180.png" alt="">Tetherless</a>
   <a href="#f" class="lnk">Features</a><a href="#how" class="lnk">Setup</a><a href="#get" class="lnk">Get</a>
+  <a href="https://github.com/pwnapplehat/TetherlessiOS" class="ghstars" id="ghstars" target="_blank" rel="noopener" aria-label="Star Tetherless on GitHub">
+    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .415 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.765 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
+    <b id="ghstars-n"></b>
+  </a>
   <button class="tbtn" id="t" aria-label="Theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
   <a href="#get" class="btn fill sm">Download</a>
 </div></header>
@@ -359,7 +379,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
 <footer class="wrap"><div class="fg">
   <a href="#top" class="brand" style="display:inline-flex;gap:10px;align-items:center;font-weight:750"><img src="assets/icon-180.png" alt="" style="width:26px;height:26px;border-radius:7px">Tetherless</a>
   <span>Only install apps you own · Not affiliated with Apple Inc.</span>
-  <span><a href="https://github.com/pwnapplehat/TetherlessiOS">GitHub ↗</a> · © <span id="y">2026</span></span>
+  <span><a href="https://github.com/pwnapplehat/TetherlessiOS">GitHub ↗</a><span id="ghstars-f"></span> · © <span id="y">2026</span></span>
 </div></footer>
 
 <script>
@@ -371,6 +391,25 @@ document.querySelectorAll('.reveal').forEach(function(e,i){e.style.transitionDel
 // live phone mockup: auto-cycle Unsigned -> Signed -> Installed
 var scr=document.querySelector('.dev .scr');
 if(scr&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var st=2;setInterval(function(){st=(st+1)%3;scr.setAttribute('data-stage',st);},2800);}})();
+
+// GitHub star count (nav badge + footer), unauthenticated public API, cached an hour.
+(function(){
+  var KEY='tl_gh_stars',TTL=3600000;
+  function fmt(n){if(n<1000)return String(n);if(n<10000)return(Math.round(n/100)/10)+'k';return Math.round(n/1000)+'k'}
+  function show(n){
+    if(!(n>0))return;
+    var nb=document.getElementById('ghstars-n');
+    if(nb){nb.textContent=fmt(n);requestAnimationFrame(function(){nb.classList.add('in')})}
+    var fb=document.getElementById('ghstars-f');
+    if(fb){fb.textContent=' · '+fmt(n)+(n===1?' star':' stars')}
+  }
+  var cached=null;
+  try{var raw=localStorage.getItem(KEY);if(raw){var obj=JSON.parse(raw);if(Date.now()-obj.t<TTL)cached=obj.n}}catch(e){}
+  if(cached!=null){show(cached);return}
+  fetch('https://api.github.com/repos/pwnapplehat/TetherlessiOS').then(function(r){return r.ok?r.json():null}).then(function(d){
+    if(d&&typeof d.stargazers_count==='number'){show(d.stargazers_count);try{localStorage.setItem(KEY,JSON.stringify({n:d.stargazers_count,t:Date.now()}))}catch(e){}}
+  }).catch(function(){});
+})();
 </script>
 </body>
 </html>

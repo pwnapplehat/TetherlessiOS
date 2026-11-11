@@ -57,6 +57,14 @@ Not sure? If your iPhone is on **iOS 26 or newer**, pick **Modern**. Otherwise p
 - Tetherless keeps **itself** signed too, so the app doesn’t fall off your Home Screen.
 - Only install apps you own or have the right to use.
 
+### Decrypting apps — one-time App Store sign-in
+
+To decrypt an app you own, the Apple ID you use in Tetherless must have been **signed in to this iPhone’s App Store at least once** — open the **App Store app** (or **Settings → your name → Media & Purchases**) and sign in with it one time.
+
+This is a **one-time step per Apple ID**: iOS stores that account’s decryption keys the first time it signs in and keeps them, so afterward you can switch your active App Store account back and decrypting still works. The account also has to **own the app** (be able to get it from the App Store).
+
+Without that one-time sign-in, decrypting fails *after* the download, because the device has no keys for that account — nothing is wrong with Tetherless or your setup.
+
 ---
 
 <div align="center">

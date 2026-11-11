@@ -12,7 +12,7 @@ Everything happens on the device in your hand.
 [**Download**](https://github.com/pwnapplehat/TetherlessiOS/releases/latest) · [Website](https://tetherlessios.com)
 
 ![iOS 17.4+](https://img.shields.io/badge/iOS-17.4%2B-19c3d6?style=flat-square)
-![Version 1.1.1](https://img.shields.io/badge/version-1.1.1-7b61ff?style=flat-square)
+![Version 1.2.0](https://img.shields.io/badge/version-1.2.0-7b61ff?style=flat-square)
 ![No jailbreak](https://img.shields.io/badge/jailbreak-not%20required-success?style=flat-square)
 
 </div>
@@ -27,6 +27,7 @@ Everything happens on the device in your hand.
 - **Keep apps alive** — resign in one tap before a signature expires, including Tetherless itself.
 - **Built-in Files** — manage IPAs, tweaks, and downloads without leaving the app.
 - **Custom certificate mode** — bring your own paid certificate to install over the air, with no pairing or VPN.
+- **Manage your Apple ID** — view your signing certificates, App IDs, and devices, and revoke a certificate to free a slot — right in the app, no Apple Developer portal needed.
 
 ## Download
 

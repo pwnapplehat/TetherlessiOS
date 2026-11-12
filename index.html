@@ -300,7 +300,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
   <div class="pre reveal">
     <div class="k">Before you start</div>
     <div class="pre-grid">
-      <div class="pre-item"><div class="l">An iPhone on iOS 17.4+</div><p>With a passcode set. iOS 26 or newer runs Modern; 17.4–25 runs Legacy.</p></div>
+      <div class="pre-item"><div class="l">An iPhone on iOS 17.4+</div><p>With a passcode set. iOS 26 or newer runs Modern; 17.4–18 runs Legacy.</p></div>
       <div class="pre-item"><div class="l">A Wi-Fi connection</div><p>Signing and installing need Wi-Fi — mobile data alone won't do it.</p></div>
       <div class="pre-item"><div class="l">A free Apple ID, or your cert</div><p>Sign with a free Apple ID, or bring your own paid certificate.</p></div>
       <div class="pre-item"><div class="l">A way to install it once</div><p>Any sideloading tool gets Tetherless on the first time. We recommend iPASide.</p></div>
@@ -312,7 +312,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
       <div class="n">1</div>
       <div>
         <h3>Get Tetherless on your iPhone</h3>
-        <p>Download the <a href="#get" class="inline">build that matches your iOS</a> — Modern for iOS 26+, Legacy for 17.4–25 — then install it once with any sideloading tool.</p>
+        <p>Download the <a href="#get" class="inline">build that matches your iOS</a> — Modern for iOS 26+, Legacy for 17.4–18 — then install it once with any sideloading tool.</p>
         <div class="variants">
           <div class="variant"><span class="chip rec">Recommended</span><p><b>iPASide</b> — installs Tetherless, and can also create the pairing file you may need in step 3.</p></div>
           <div class="variant"><span class="chip">Also works</span><p>AltStore, SideStore, eSign or KSign — anything that can install an IPA.</p></div>
@@ -363,7 +363,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
       <details class="reveal"><summary>Do I ever need a computer?</summary><div class="a">No. Only the very first install uses a sideloading tool of your choice. After that, everything — signing, installing, resigning, decrypting, even updating Tetherless — happens on the iPhone.</div></details>
       <details class="reveal"><summary>How long do installed apps last?</summary><div class="a">With a free Apple ID, <b>7 days</b> — open Tetherless and tap Resign to renew. A paid certificate lasts a year. Tetherless resigns itself too, so it won't fall off your Home Screen.</div></details>
       <details class="reveal"><summary>Can it refresh my apps automatically?</summary><div class="a">Yes. In the <b>Shortcuts</b> app, make a Time-of-Day automation that runs <b>Enable LocalDevVPN</b> then Tetherless's <b>Refresh All Apps</b> action. On schedule it re-signs every sideloaded app — and Tetherless itself — in the background, even while your iPhone is <b>locked</b>, and notifies you when it's done. There's a <b>Refresh All</b> button in Library → Installed to do it by hand, too.</div></details>
-      <details class="reveal"><summary>Modern or Legacy — which do I pick?</summary><div class="a">On iOS 26 or newer, pick <b>Modern</b>. On iOS 17.4–25, pick <b>Legacy</b>. Same features either way; Modern just uses the newest system look and on-device pairing.</div></details>
+      <details class="reveal"><summary>Modern or Legacy — which do I pick?</summary><div class="a">On iOS 26 or newer, pick <b>Modern</b>. On iOS 17.4–18, pick <b>Legacy</b>. Same features either way; Modern just uses the newest system look and on-device pairing.</div></details>
       <details class="reveal"><summary>Why does free signing need LocalDevVPN and pairing?</summary><div class="a">Free Apple-ID installs go through an on-device connection. LocalDevVPN provides that connection, and pairing authorizes this iPhone once. Bring your own certificate and you skip both — it installs over the air.</div></details>
       <details class="reveal"><summary>Decrypting an app fails — why?</summary><div class="a">To decrypt an app, the Apple ID you use must own it <b>and</b> must have been signed in to this iPhone's App Store <b>at least once</b> (open the App Store app, or Settings → Media &amp; Purchases, and sign in). iOS stores that account's decryption keys on first sign-in and keeps them, so it's a one-time step per Apple ID — afterward you can switch your active App Store account and decrypting still works. Skip it and the decrypt fails after the download, because the device has no keys for that account.</div></details>
       <details class="reveal"><summary>Is this allowed?</summary><div class="a">Only install apps you own or have the right to use. Tetherless isn't affiliated with Apple; “iPhone”, “iOS” and “App Store” are trademarks of Apple Inc.</div></details>
@@ -375,7 +375,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
   <h2 class="reveal">Grab your build.</h2>
   <div class="builds">
     <div class="b hot reveal"><div class="t">★ Recommended</div><h3>Modern</h3><p class="os">iOS 26 and later</p><ul><li>Full Liquid Glass look</li><li>On-device pairing</li><li>Every feature</li></ul><a href="https://github.com/pwnapplehat/TetherlessiOS/releases/latest" class="btn fill">Download Modern</a></div>
-    <div class="b reveal"><div class="t">Wider support</div><h3>Legacy</h3><p class="os">iOS 17.4 – 25</p><ul><li>Same features, earlier iOS</li><li>Pairing-file import</li><li>Custom-certificate mode</li></ul><a href="https://github.com/pwnapplehat/TetherlessiOS/releases/latest" class="btn">Download Legacy</a></div>
+    <div class="b reveal"><div class="t">Wider support</div><h3>Legacy</h3><p class="os">iOS 17.4 – 18</p><ul><li>Same features, earlier iOS</li><li>Pairing-file import</li><li>Custom-certificate mode</li></ul><a href="https://github.com/pwnapplehat/TetherlessiOS/releases/latest" class="btn">Download Legacy</a></div>
   </div>
   <p class="note reveal">iPhone on iOS 17.4 or later. Free Apple-ID signing uses the free LocalDevVPN app; custom-certificate mode needs neither pairing nor a VPN.</p>
 </section>

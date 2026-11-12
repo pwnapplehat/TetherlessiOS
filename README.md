@@ -34,7 +34,7 @@ Everything happens on the device in your hand.
 | Build | For | |
 |-------|-----|---|
 | **Modern** | iOS 26 and later | [Download](https://github.com/pwnapplehat/TetherlessiOS/releases/latest) |
-| **Legacy** | iOS 17.4 – 25 | [Download](https://github.com/pwnapplehat/TetherlessiOS/releases/latest) |
+| **Legacy** | iOS 17.4 – 18.x.x | [Download](https://github.com/pwnapplehat/TetherlessiOS/releases/latest) |
 
 Not sure? If your iPhone is on **iOS 26 or newer**, pick **Modern**. Otherwise pick **Legacy**.
 

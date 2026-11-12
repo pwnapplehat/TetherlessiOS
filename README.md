@@ -12,7 +12,7 @@ Everything happens on the device in your hand.
 [**Download**](https://github.com/pwnapplehat/TetherlessiOS/releases/latest) · [Website](https://tetherlessios.com)
 
 ![iOS 17.4+](https://img.shields.io/badge/iOS-17.4%2B-19c3d6?style=flat-square)
-![Version 1.2.0](https://img.shields.io/badge/version-1.2.0-7b61ff?style=flat-square)
+![Version 1.2.1](https://img.shields.io/badge/version-1.2.1-7b61ff?style=flat-square)
 ![No jailbreak](https://img.shields.io/badge/jailbreak-not%20required-success?style=flat-square)
 
 </div>
@@ -23,8 +23,9 @@ Everything happens on the device in your hand.
 
 - **Sign & install any IPA** — using your free Apple ID, or your own certificate.
 - **Get a clean copy of apps you own** — download an app you already own from the App Store and produce a DRM-free copy, fully on-device.
+- **Multiple App Store accounts** — sign several Apple IDs in for downloads and switch between them right in the Decrypt tab.
 - **Tweak injection** — add `.deb` or `.dylib` tweaks while you sign.
-- **Keep apps alive** — resign in one tap before a signature expires, including Tetherless itself.
+- **Keep apps alive** — resign in one tap, **Refresh All** at once, or **automate it with a Shortcut** so your apps (and Tetherless itself) never expire — even while your iPhone is locked.
 - **Built-in Files** — manage IPAs, tweaks, and downloads without leaving the app.
 - **Custom certificate mode** — bring your own paid certificate to install over the air, with no pairing or VPN.
 - **Manage your Apple ID** — view your signing certificates, App IDs, and devices, and revoke a certificate to free a slot — right in the app, no Apple Developer portal needed.
@@ -54,9 +55,21 @@ Not sure? If your iPhone is on **iOS 26 or newer**, pick **Modern**. Otherwise p
 
 ## Good to know
 
-- Apps signed with a **free Apple ID** stay valid for **7 days** — just open Tetherless and tap **Resign** to renew. A paid certificate lasts a year.
+- Apps signed with a **free Apple ID** stay valid for **7 days** — tap **Resign** on one app, **Refresh All** to do every app at once, or set up the automation below so you never have to think about it. A paid certificate lasts a year.
 - Tetherless keeps **itself** signed too, so the app doesn’t fall off your Home Screen.
 - Only install apps you own or have the right to use.
+
+### Automatic refresh — set it and forget it
+
+Free signing expiring every 7 days is the one chore of sideloading. Tetherless can do it for you on a schedule, in the background, with the **Shortcuts** app:
+
+1. In **Shortcuts → Automation**, create a **Personal Automation** → **Time of Day** (e.g. overnight, every few days). Set it to **Run Immediately**.
+2. Add the **Enable LocalDevVPN** action (with your Tunnel IP / Device IP).
+3. Add Tetherless’s **Refresh All Apps** action after it.
+
+That’s it. On schedule it brings the connection up and re-signs every sideloaded app — and Tetherless itself — then sends you a notification. It works even with your iPhone **locked**, so nothing ever expires. (There’s also a **Refresh All** button in Library → Installed to do it by hand any time.)
+
+Open Tetherless once after installing so it can finish setting up; keep **LocalDevVPN** installed and your Apple ID signed in. If Apple ever signs you out, just sign in again — that one step can’t be automated.
 
 ### Decrypting apps — one-time App Store sign-in
 

@@ -234,7 +234,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
 <section class="hero wrap">
   <div class="hero-grid">
     <div>
-      <span class="flag"><span class="d"></span>Tetherless 1.2 — now available</span>
+      <span class="flag"><span class="d"></span>Tetherless 1.2.1 — now available</span>
       <h1>No&nbsp;<span class="strike">computer.</span><br><span class="pop">Just&nbsp;iPhone.</span></h1>
       <p class="lede">Sign and install apps on-device. No Mac, no PC, no cable, no jailbreak.</p>
       <div class="hero-cta">
@@ -285,9 +285,11 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
   <div class="trio">
     <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="glyphgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1fe3ff"/><stop offset=".52" stop-color="#7b61ff"/><stop offset="1" stop-color="#ff3d9a"/></linearGradient></defs></svg>
     <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h4>Tweak injection</h4><p>Add .deb / .dylib tweaks while signing.</p></div>
-    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div><h4>Keep alive</h4><p>Resign before a signature expires.</p></div>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg></div><h4>Keep alive</h4><p>Resign one, Refresh All, or let a Shortcut do it.</p></div>
     <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div><h4>Built-in Files</h4><p>Manage everything in-app.</p></div>
     <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></div><h4>Manage your Apple ID</h4><p>Revoke signing certificates in-app — no Apple portal.</p></div>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4>Auto-refresh</h4><p>Schedule a Shortcut to re-sign everything — even locked.</p></div>
+    <div class="sm3 reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#glyphgrad)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Multiple Apple IDs</h4><p>Add several Store accounts, switch in Decrypt.</p></div>
   </div>
 </section>
 
@@ -360,6 +362,7 @@ footer a{color:var(--ink-2)}footer a:hover{color:var(--ink)}
     <div class="faq">
       <details class="reveal"><summary>Do I ever need a computer?</summary><div class="a">No. Only the very first install uses a sideloading tool of your choice. After that, everything — signing, installing, resigning, decrypting, even updating Tetherless — happens on the iPhone.</div></details>
       <details class="reveal"><summary>How long do installed apps last?</summary><div class="a">With a free Apple ID, <b>7 days</b> — open Tetherless and tap Resign to renew. A paid certificate lasts a year. Tetherless resigns itself too, so it won't fall off your Home Screen.</div></details>
+      <details class="reveal"><summary>Can it refresh my apps automatically?</summary><div class="a">Yes. In the <b>Shortcuts</b> app, make a Time-of-Day automation that runs <b>Enable LocalDevVPN</b> then Tetherless's <b>Refresh All Apps</b> action. On schedule it re-signs every sideloaded app — and Tetherless itself — in the background, even while your iPhone is <b>locked</b>, and notifies you when it's done. There's a <b>Refresh All</b> button in Library → Installed to do it by hand, too.</div></details>
       <details class="reveal"><summary>Modern or Legacy — which do I pick?</summary><div class="a">On iOS 26 or newer, pick <b>Modern</b>. On iOS 17.4–25, pick <b>Legacy</b>. Same features either way; Modern just uses the newest system look and on-device pairing.</div></details>
       <details class="reveal"><summary>Why does free signing need LocalDevVPN and pairing?</summary><div class="a">Free Apple-ID installs go through an on-device connection. LocalDevVPN provides that connection, and pairing authorizes this iPhone once. Bring your own certificate and you skip both — it installs over the air.</div></details>
       <details class="reveal"><summary>Decrypting an app fails — why?</summary><div class="a">To decrypt an app, the Apple ID you use must own it <b>and</b> must have been signed in to this iPhone's App Store <b>at least once</b> (open the App Store app, or Settings → Media &amp; Purchases, and sign in). iOS stores that account's decryption keys on first sign-in and keeps them, so it's a one-time step per Apple ID — afterward you can switch your active App Store account and decrypting still works. Skip it and the decrypt fails after the download, because the device has no keys for that account.</div></details>
